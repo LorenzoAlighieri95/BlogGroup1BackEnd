@@ -2,7 +2,6 @@
 
 var mongoose = require('mongoose'),
   Article = mongoose.model('Articles');
-  //Comment = mongoose.model('Comments');
 
 /*
 exports.list_all_articles = function(req, res) {

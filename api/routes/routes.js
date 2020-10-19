@@ -20,4 +20,19 @@ module.exports = function(app) {
   app.route('/comments')
     .get(comments.list_all_comments)
     .post(comments.create_a_comment);
+
+  app.route('/comments/:commentId')
+    .patch(comments.patch_a_comment)
+    .delete(comments.delete_a_comment);
 };
+/*
+app.route("/articles/:articleId/comments")
+.get(comments.get_comments_article);    
+
+app.route('/comments')
+.get(comments.list_all_comments)
+.post(comments.create_a_comment);
+
+app.route('/comments/:commentId')
+.patch(comments.patch_a_comment);
+*/
