@@ -1,8 +1,8 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-  Article = mongoose.model('Articles'),
-  Comment = mongoose.model('Comments');
+  Article = mongoose.model('Articles');
+  //Comment = mongoose.model('Comments');
 
 /*
 exports.list_all_articles = function(req, res) {
@@ -67,29 +67,3 @@ exports.delete_an_article = function(req, res) {
     res.json({ message: 'Article successfully deleted' });
   });
 };
-
-//INIZIO CONTROLLER COMMENTI
-
-exports.list_all_comments = function(req, res) {
-  Comment.find({}, function(err, article) {
-    if (err)
-      res.send(err);
-    res.json(article);
-  });
-};
-
-exports.create_a_comment = function(req, res) {
-  var new_comment = new Comment(req.body);
-  new_comment.save(function(err, comment) {
-    if (err)
-      res.send(err);
-    res.json(comment);
-  });
-};
-
-exports.get_comments_article = async function(req,res){
-  let foundArticle = await Article.findOne({_id:req.params.articleId}).populate("comments");
-  res.json(foundArticle);
-}
-
-

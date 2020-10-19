@@ -1,7 +1,8 @@
 
 'use strict';
 module.exports = function(app) {
-  var articles = require('../controllers/Controller');
+  var articles = require('../controllers/articleController');
+  var comments = require('../controllers/commentController');
   
   app.route('/articles')
     .get(articles.list_all_articles)
@@ -14,9 +15,9 @@ module.exports = function(app) {
     .patch(articles.patch_an_article);
 
   app.route("/articles/:articleId/comments")
-    .get(articles.get_comments_article);
+    .get(comments.get_comments_article);
 
   app.route('/comments')
-    .get(articles.list_all_comments)
-    .post(articles.create_a_comment);
+    .get(comments.list_all_comments)
+    .post(comments.create_a_comment);
 };
