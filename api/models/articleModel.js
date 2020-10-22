@@ -6,6 +6,9 @@ var ArticleSchema = new Schema({
   title: {
     type: String
   },
+  subtitle: {
+    type: String
+  },
   Created_date: {
     type: Date,
     default: Date.now
@@ -24,6 +27,10 @@ var ArticleSchema = new Schema({
   img: { data: Buffer, 
     contentType: String 
   },
+  author: {
+    type: String
+  },
+  tags:  [String],
   comments:[{
     type: Schema.Types.ObjectId,
     ref: "Comments"
