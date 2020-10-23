@@ -10,8 +10,7 @@ exports.list_all_comments = function(req, res) {
 };
   
 exports.create_a_comment = function(req, res) {
-  var new_comment = new Comment(req.body);
-  new_comment.save(function(err, comment) {
+  new Comment(req.body).save(function(err, comment) {
     if (err)
       res.send(err);
     res.json(comment);
