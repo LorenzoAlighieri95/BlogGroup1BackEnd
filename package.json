@@ -16,5 +16,8 @@
     "express": "^4.17.1",
     "mongoose": "^5.10.9"
   },
-  "start": "nodemon server.js"
+  "start": "nodemon server.js",
+  "engines": {
+    "node": "10.x"
+  }
 }
