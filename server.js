@@ -12,7 +12,7 @@ var express = require('express'),
   
 mongoose.Promise = global.Promise;
 var mongoDB="mongodb+srv://Lorenzo:AmineWeMissYou@clustergroup1.yjp2d.mongodb.net/blogDB?retryWrites=true&w=majority";
-mongoose.connect(mongoDB,{useNewUrlParser: true , useUnifiedTopology: true}); 
+mongoose.connect(mongoDB); 
 var db= mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
